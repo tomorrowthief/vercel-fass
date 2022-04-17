@@ -1,10 +1,10 @@
 module.exports = (req, res) => {
   const { salary = 0, base = 0 } = req.query
   try {
-    if (isNaN(salary) || isNaN(base)) {
+    if (isNaN(Number(salary)) || isNaN(Number(base))) {
       throw ('a or b must be number')
     }
-    res.send(gets(salary, base))
+    res.send(gets(Number(salary), Number(base)))
   } catch (err) {
     res.send(err)
   }
@@ -19,5 +19,5 @@ function gets (salary, base = 0) {
     } else {
         self = salary
     }
-    return salary + self * 0.12
+    return Number(salary) + Number(self) * 0.12
 }
