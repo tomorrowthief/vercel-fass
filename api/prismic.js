@@ -1,5 +1,6 @@
 module.exports = (req, res) => {
   console.log(req)
 
-  res.send(`prismic param:`)
+  res.status(200);
+  response.json({ data: true })
 }
