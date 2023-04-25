@@ -1,5 +1,5 @@
 module.exports = (req, res) => {
-  console.log('do nothing')
+  console.log(req)
 
   res.send(`prismic param:`)
 }
